@@ -1,0 +1,32 @@
+﻿@using VideoApiWeb.Models
+@model List<Group>
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/OfficeUIFabricLayout.cshtml";
+}
+<h2 className="ms-font-xxl">My groups</h2>
+<div class="ms-Grid">
+    <div class="ms-Grid-row">
+        @foreach (var item in Model)
+        {
+            <div class="ms-Grid-col ms-u-sm3">
+                <div class="ms-Persona">
+                    <div class="ms-Persona-imageArea">
+                        <div class="ms-Persona-initials ms-Persona-initials--blue">
+                            @item.DisplayName.Substring(0, 2).ToUpper()
+                        </div>
+
+                        <img class="ms-Persona-image" src="images/GetGroupImage?groupid=@item.Id">
+                        @* this construction is required we need to fetch the group images asynchronously *@
+                    </div>
+                    <div class="ms-Persona-details">
+                        <div class="ms-Persona-primaryText" title="@item.DisplayName">
+                            <a href="@item.ConversationsUrl" target="_blank">@item.DisplayName</a>
+                        </div><div class="ms-Persona-secondaryText" title="@item.Description">@item.Description</div>
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+</div>@* groups *@

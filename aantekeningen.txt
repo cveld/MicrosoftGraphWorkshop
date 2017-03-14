@@ -1,0 +1,39 @@
+https://login.microsoftonline.com/common/adminconsent?&client_id=de8bc8b5-d9f9-48b1-a8ad-b748da725064&redirect_uri=https%3A%2F%2Fgraph.microsoft.io%2Fen-us%2Fgraph-explorer&state=e69633cd-bd85-46ad-be0b-a192d75f5dda&client-request-id=6825b210-3358-4cbf-8a83-3e8cc7bb199f&x-client-SKU=Js&x-client-Ver=2.0.0-experimental&nonce=2bf1dc87-d647-4174-a172-0ca627e29b08
+oauth2AllowImplicitFlow
+https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-devquickstarts-webapp-dotnet
+https://www.eliostruyf.com/get-to-know-to-which-office-365-groups-a-user-is-a-member-of-microsoft-graph/
+
+
+https://developer.microsoft.com/en-us/graph/docs/overview/changelog
+* March 2017:
+- custom data (beta)
+
+* December 2016:
+- Delta's (beta)
+
+* October 2016: 
+- 2.0 endpoint ondersteunt nu client_credentials oauth grant
+- admin consent permissions
+
+
+https://apps.dev.microsoft.com
+https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-compare
+https://docs.microsoft.com/en-us/azure/active-directory/develop/active-directory-v2-limitations
+OAuth 2.0 JSON Web Token (JWT) bearer credential grant
+
+
+https://docs.microsoft.com/en-us/azure/app-service-mobile/app-service-mobile-how-to-configure-active-directory-authentication
+https://contoso.azurewebsites.net/.auth/login/aad/callback
+
+https://localhost:44315/.auth/login/aad/callback
+
+Key1
+7S18NpKsXK8ebViaW3rb9qAlzWpQ7nQpUAjGkzAb2cc=
+
+
+    <add key="ida:ClientID" value="05985094-c90b-4d75-85b4-eb9532b97590" />
+    <add key="ida:Password" value="cCs1aUhNv6mF/vVX19zMCyMdz1CLuxuDKolnlOZOqPs=" />
+    <add key="ida:O365TenantId" value="mod421769" />
+    <add key="ida:AadTenantId" value="d7c5981b-f496-47bb-9bb8-c645d46053cb" />
+    <add key="ida:AuthorizationUri" value="https://login.windows.net" />
+    <add key="ida:NotificationUrl" value="https://81fe44b0.ngrok.io/notification/listen" />

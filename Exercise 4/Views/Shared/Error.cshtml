@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Error";
+    Layout = "~/Views/Shared/OfficeUIFabricLayout.cshtml";
+}
+<div class="ms-Grid">
+    <div class="ms-Grid-row">
+        <h1>Error.</h1>
+        <h2>An error occurred while processing your request.</h2>
+
+        <div class="alert alert-danger">@ViewBag.Message</div>
+        @if (!string.IsNullOrEmpty(ViewBag.Debug))
+        {
+            <pre>@ViewBag.Debug</pre>
+        }
+
+    </div>
+</div>

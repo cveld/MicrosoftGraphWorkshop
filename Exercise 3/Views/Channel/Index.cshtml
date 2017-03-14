@@ -1,0 +1,18 @@
+﻿@model IEnumerable<VideoApiWeb.Models.VideoChannel>
+
+@{
+    ViewBag.Title = "Channels";
+    Layout = "~/Views/Shared/OfficeUIFabricLayout.cshtml";
+}
+
+
+
+<div class="VideoPortal-page ChannelsPage">
+    <div class="ms-Grid">
+@foreach (var item in Model)
+{
+    @* paste view mark-up for channel item here *@
+}
+       
+    </div>
+</div>

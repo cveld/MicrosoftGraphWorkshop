@@ -1,0 +1,16 @@
+﻿@using VideoApiWeb.Models
+@model List<Group>
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/OfficeUIFabricLayout.cshtml";
+}
+<h2 className="ms-font-xxl">My groups</h2>
+<div class="ms-Grid">
+    <div class="ms-Grid-row">
+        @foreach (var item in Model)
+        {
+            @* ADD YOUR FAVORITE GROUP ITEM MARK-UP HERE! *@
+
+        }
+    </div>
+</div>@* groups *@

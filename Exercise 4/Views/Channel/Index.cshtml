@@ -1,0 +1,19 @@
+﻿@model IEnumerable<VideoApiWeb.Models.VideoChannel>
+
+@{
+    ViewBag.Title = "Channels";
+    Layout = "~/Views/Shared/OfficeUIFabricLayout.cshtml";
+}
+
+
+
+<div class="VideoPortal-page ChannelsPage">
+    <div class="ms-Grid">
+@foreach (var item in Model)
+{    
+    //@Html.RouteLink("Videos", "ChannelVideos", new { channelId = item.Id, action = "Index" }, null)
+    <a href="@Url.Action("Index", "Video", new { channelId = item.Id })" class="ChannelGroup-channel ms-fontColor-neutralSecondary ms-Grid-col ms-u-sm12 ms-u-md6 ms-u-xl4" style="border-color: @item.HtmlColor">@item.Title</a>
+}
+       
+    </div>
+</div>

@@ -1,0 +1,70 @@
+﻿@model VideoApiWeb.Models.VideoListViewModel
+@using VideoApiWeb.Utils
+
+@{
+    ViewBag.Title = "Channel Page";
+    Layout = "~/Views/Shared/OfficeUIFabricLayout.cshtml";
+}
+
+<div class="VideoPortal-page ChannelPage">
+    
+
+    <!-- Main page content -->
+    <div class="ChannelPage-content u-contentCenter">
+        <div class="ChannelPage-contentCell ms-Grid">
+            <div class="ChannelPage-pivots">
+                <ul class="ms-Pivot">
+                    <li class="ms-Pivot-link is-selected">Popular</li>
+                    <li class="ms-Pivot-link">All Videos</li>
+                    <li class="ms-Pivot-link">My Videos</li>
+
+                </ul>
+            </div>
+
+            <div class="ChannelPage-videos VideoList">
+                <div class="ms-Grid-row">
+                    @foreach (var item in Model.Videos)
+                    {
+                       @* paste view mark-up for channel video item here *@
+
+                    }
+
+                    
+                </div>@* video's *@
+               
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/Scripts/jquery.signalR-2.2.1.min.js")
+    @Scripts.Render("~/signalr/hubs")
+
+    <script>
+var connection = $.hubConnection();
+var hub = connection.createHubProxy("NotificationHub");
+hub.on("showNotification", function (messages) {
+    $.each(messages, function (index, value) {     // Iterate through the message collection
+        var message = value;                       // Get current message
+
+        var table = $("<table></table>");
+        var header = $("<th>Message</th>").appendTo(table);
+
+        for (prop in message) {                    // Iterate through message properties
+            var property = message[prop];
+            var row = $("<tr></tr>");
+
+            $("<td></td>").text(prop).appendTo(row);
+            $("<td></td>").text(property).appendTo(row);
+            table.append(row);
+        }
+        $("#message").append(table);
+        $("#message").append("<br />");
+    });
+});
+connection.start();
+    </script>
+}
