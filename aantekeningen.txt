@@ -27,7 +27,9 @@ https://contoso.azurewebsites.net/.auth/login/aad/callback
 
 https://localhost:44315/.auth/login/aad/callback
 
+mod498161
 Key1
+e5adac65-661a-4c06-8d0e-cf4e21fe7746
 7S18NpKsXK8ebViaW3rb9qAlzWpQ7nQpUAjGkzAb2cc=
 
 
