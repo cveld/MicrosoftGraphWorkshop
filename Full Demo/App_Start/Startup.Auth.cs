@@ -7,6 +7,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.OpenIdConnect;
 using Owin;
 using VideoApiWeb.Utils;
+using System.Data;
 
 namespace VideoApiWeb
 {
@@ -52,7 +53,13 @@ namespace VideoApiWeb
                     {
                         context.HandleResponse();
 
-                        context.Response.Redirect("/Error?Message=Authentication failed");
+                        if (context.Exception is DataException)
+                        {
+                            context.Response.Redirect("/Error?Message=Data initialization failed");
+                        } else
+                        {
+                            context.Response.Redirect("/Error?Message=Authentication failed");
+                        }
 
                         return Task.FromResult(0);
                     }
